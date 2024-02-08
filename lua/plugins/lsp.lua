@@ -4,6 +4,7 @@ return {
     dependencies = {
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
       { 'j-hui/fidget.nvim',       opts = {} },
       'folke/neodev.nvim',
     },
@@ -133,6 +134,16 @@ return {
             filetypes = (servers[server_name] or {}).filetypes,
           })
         end,
+      })
+
+      local mason_tool_installer = require("mason-tool-installer")
+
+      mason_tool_installer.setup({
+        ensure_installed = {
+        "prettier", -- prettier formatter
+        "stylua", -- lua formatter
+        "eslint_d", -- js linter
+        }
       })
     end
   },

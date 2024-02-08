@@ -11,16 +11,16 @@ return {
         end,
       },
     },
-    config = function ()
-      local telescope = require("telescope")
-      local icons = require("icons")
-      local actions = require("telescope.actions")
-      telescope.setup({
+    config = function()
+      local telescope = require 'telescope'
+      local icons = require 'icons'
+      local actions = require 'telescope.actions'
+      telescope.setup {
         defaults = {
-          prompt_prefix = icons.ui.Telescope .." ",
-          selection_caret = icons.ui.Forward.." ",
-          initial_mode = "insert",
-          path_display = "smart",
+          prompt_prefix = icons.ui.Telescope .. ' ',
+          selection_caret = icons.ui.Forward .. ' ',
+          initial_mode = 'insert',
+          path_display = { 'shorten' },
           color_devicons = true,
           mappings = {
             i = {
@@ -28,10 +28,10 @@ return {
               ['<C-d>'] = false,
             },
             n = {
-              ["<esc>"] = actions.close,
-              ["j"] = actions.move_selection_next,
-              ["k"] = actions.move_selection_previous,
-              ["q"] = actions.close,
+              ['<esc>'] = actions.close,
+              ['j'] = actions.move_selection_next,
+              ['k'] = actions.move_selection_previous,
+              ['q'] = actions.close,
             },
           },
         },
@@ -40,12 +40,12 @@ return {
             fuzzy = true,
             override_generic_sorter = true,
             override_file_sorter = true,
-            case_mode = "smart_case"
-          }
-        }
-      })
+            case_mode = 'smart_case',
+          },
+        },
+      }
 
-      telescope.load_extension("fzf")
+      telescope.load_extension 'fzf'
 
       -- Telescope live_grep in git root
       -- Function to find the git root directory based on the current buffer's path
@@ -110,6 +110,6 @@ return {
       vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
       vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
-    end
+    end,
   },
 }
