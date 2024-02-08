@@ -1,10 +1,10 @@
 return {
   {
-    "catppuccin/nvim",
+    'catppuccin/nvim',
     lazy = false,
     priority = 1000,
     config = function()
-      require("catppuccin").setup({
+      require('catppuccin').setup {
         integrations = {
           aerial = true,
           alpha = true,
@@ -23,13 +23,13 @@ return {
           native_lsp = {
             enabled = true,
             underlines = {
-              errors = { "undercurl" },
-              hints = { "undercurl" },
-              warnings = { "undercurl" },
-              information = { "undercurl" },
+              errors = { 'undercurl' },
+              hints = { 'undercurl' },
+              warnings = { 'undercurl' },
+              information = { 'undercurl' },
             },
           },
-          navic = { enabled = true, custom_bg = "lualine" },
+          navic = { enabled = true, custom_bg = 'lualine' },
           neotest = true,
           neotree = true,
           noice = true,
@@ -40,8 +40,8 @@ return {
           treesitter_context = true,
           which_key = true,
         },
-      })
-      vim.cmd.colorscheme("catppuccin-mocha")
-    end
-  }
+      }
+      vim.cmd.colorscheme 'catppuccin'
+    end,
+  },
 }

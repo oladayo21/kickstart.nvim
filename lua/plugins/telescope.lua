@@ -20,7 +20,7 @@ return {
           prompt_prefix = icons.ui.Telescope .. ' ',
           selection_caret = icons.ui.Forward .. ' ',
           initial_mode = 'insert',
-          path_display = { 'shorten' },
+          -- path_display = { 'shorten' },
           color_devicons = true,
           mappings = {
             i = {
